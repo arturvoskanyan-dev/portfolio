@@ -1,10 +1,16 @@
 "use client";
 
-import React from 'react'
-import { useBackground } from './BackgroundProvider';
+import React, { useEffect } from 'react'
+import { useAppDispatch, useAppSelector } from '@/lib/hooks';
+import { loadWallpaper } from '@/lib/features/wallpaperSlice';
 
 export default function Background() {
-    const {wallpaper} = useBackground();
+    const dispatch = useAppDispatch();
+    const wallpaper = useAppSelector((state) => state.wallpaper.wallpaper);
+
+    useEffect(() => {
+        dispatch(loadWallpaper());
+    }, [])
 
     return (
         <div

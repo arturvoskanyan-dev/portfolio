@@ -1,10 +1,11 @@
 "use client";
 
+import { setWallpaper } from '@/lib/features/wallpaperSlice';
+import { useAppDispatch } from '@/lib/hooks';
 import React from 'react'
-import { useBackground } from './BackgroundProvider'
 
 export default function WallpaperChanger() {
-    const {setWallpaper} = useBackground();
+    const dispatch = useAppDispatch();
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0];
@@ -14,7 +15,7 @@ export default function WallpaperChanger() {
         const reader = new FileReader();
         reader.onload = () => {
             const url = reader.result as string;
-            setWallpaper(url);
+            dispatch(setWallpaper(url));
         }
 
         reader.readAsDataURL(file);
