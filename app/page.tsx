@@ -1,13 +1,14 @@
 import WallpaperChanger from "@/components/background/WallpaperChanger";
 import Dock from "@/components/dock";
+import SettingsWindow from "@/components/windows/settings/SettingsWindow";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <div>
-      <h1 className="text-red">Hello</h1>
       <Dock />
       <WallpaperChanger />
+      <SettingsWindow />
     </div>
   );
 }
