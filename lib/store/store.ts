@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import wallpaperReducer from "./features/wallpaperSlice";
+import wallpaperReducer from "./slices/wallpaper/wallpaperSlice";
 
 const store = configureStore({
     reducer: {

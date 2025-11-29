@@ -1,7 +1,7 @@
 "use client";
 
-import { setWallpaper } from '@/lib/features/wallpaperSlice';
-import { useAppDispatch } from '@/lib/hooks';
+import { setWallpaper } from '@/lib/store/slices/wallpaper/wallpaperSlice';
+import { useAppDispatch } from '@/lib/store/hooks';
 import React from 'react'
 
 export default function WallpaperChanger() {
