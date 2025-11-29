@@ -1,21 +1,25 @@
+"use client";
+
+import { useAppDispatch } from "@/lib/store/hooks";
+import { changeWindowState } from "@/lib/store/slices/windows/windowsSlice";
 import Image from "next/image";
 
 export default function DockItem({
   src,
   alt,
   link,
-  windowChange
 }: {
   src: string;
   alt: string;
   link?: string;
-  windowChange: (window: string) => void;
 }) {
+  const dispatch = useAppDispatch();
+
   return (
     <div
       className={`relative flex items-end transition-all duration-200 hover:scale-[1.35]`}
     >
-      <button onClick={() => windowChange(alt)}>
+      <button onClick={() => dispatch(changeWindowState(alt))}>
         <Image
           src={src}
           alt={alt}
