@@ -37,7 +37,6 @@ const windowsSlice = createSlice({
             const windowName = action.payload;
             state[windowName].isOpen = false; // not final
             state[windowName].isMinimized = true
-            state[windowName].isMaximized = false;
         },
         toogleMaximize(state, action: PayloadAction<keyof WindowsStateType>) {
             const windowName = action.payload;
