@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { useAppDispatch, useAppSelector } from "@/lib/store/hooks";
-import { resetWindowPosition, setWindowPosition } from "@/lib/store/slices/windows/windowsSlice";
+import { resetWindowPosition, setWindowPosition, WindowsStateType } from "@/lib/store/slices/windows/windowsSlice";
 
 export default function WindowHeader({
     windowName,
@@ -11,7 +11,7 @@ export default function WindowHeader({
     onMinimize,
     onMaximize,
 }: {
-    windowName: string;
+    windowName: keyof WindowsStateType;
     title: string;
     onClose: () => void;
     onMinimize: () => void;

@@ -18,10 +18,8 @@ export default function Windows() {
         <>
             {windows.settings.isOpen && (
                 <SettingsWindow
-                    // widthSize={widthSize}
-                    // heightSize={heightSize}
-                    // isMaximized={isMax}
-                    // topOffset={topOffset}
+                    widthSize={widthSize}
+                    heightSize={heightSize}
                 />
             )}
         </>

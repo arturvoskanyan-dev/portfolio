@@ -7,7 +7,7 @@ interface SingleWindowStateType {
     position: { x: number, y: number },
 }
 
-interface WindowsStateType {
+export interface WindowsStateType {
     settings: SingleWindowStateType
 }
 
@@ -37,6 +37,7 @@ const windowsSlice = createSlice({
             state[windowName].isOpen = false;
             state[windowName].isMinimized = false;
             state[windowName].isMaximized = false;
+            state[windowName].position = { x: 50, y: 50 };
         },
         minimizeWindow(state, action: PayloadAction<keyof WindowsStateType>) {
             const windowName = action.payload;
@@ -52,9 +53,9 @@ const windowsSlice = createSlice({
             const { windowName, x, y } = action.payload;
             state[windowName].position = { x, y };
         },
-        resetWindowPosition(state, action: PayloadAction<{windowName: keyof WindowsStateType}>) {
+        resetWindowPosition(state, action: PayloadAction<keyof WindowsStateType>) {
             const windowName = action.payload;
-            state[windowName].position = {x: 0, y: 20};
+            state[windowName].position = { x: 0, y: 20 };
         }
     }
 })
