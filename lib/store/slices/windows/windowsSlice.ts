@@ -5,6 +5,7 @@ interface SingleWindowStateType {
     isMinimized: boolean,
     isMaximized: boolean,
     position: { x: number, y: number },
+    activeSettingsSection?: string | null,
 }
 
 export interface WindowsStateType {
@@ -19,7 +20,8 @@ const initialState: WindowsStateType = {
         position: {
             x: 50,
             y: 50,
-        }
+        },
+        activeSettingsSection: null
     },
 }
 
@@ -56,9 +58,13 @@ const windowsSlice = createSlice({
         resetWindowPosition(state, action: PayloadAction<keyof WindowsStateType>) {
             const windowName = action.payload;
             state[windowName].position = { x: 0, y: 20 };
-        }
+        },
+        setActiveSettingsSection(state, action: PayloadAction<{windowName: keyof WindowsStateType, activeSection: string}>) {
+            const windowName = action.payload.windowName;
+            state[windowName].activeSettingsSection = action.payload.activeSection;
+        } 
     }
 })
 
-export const { openWindow, closeWindow, minimizeWindow, toogleMaximize, setWindowPosition, resetWindowPosition } = windowsSlice.actions;
+export const { openWindow, closeWindow, minimizeWindow, toogleMaximize, setWindowPosition, resetWindowPosition, setActiveSettingsSection } = windowsSlice.actions;
 export default windowsSlice.reducer;

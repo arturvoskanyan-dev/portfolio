@@ -7,15 +7,17 @@ import {
   toogleMaximize,
 } from "@/lib/store/slices/windows/windowsSlice";
 import WindowHeader from "../WindowHeader";
+import SettingsSidebar from "./SettingsSidebar";
+import WallpaperChanger from "@/components/background/WallpaperChanger";
 
 export default function SettingsWindow({
   widthSize,
   heightSize
 }: {
-  widthSize: number | string,
-  heightSize: number | string
+  widthSize: string,
+  heightSize: string
 }) {
-  const { position } = useAppSelector((state) => state.windows.settings);
+  const { position, activeSettingsSection } = useAppSelector((state) => state.windows.settings);
   const dispatch = useAppDispatch();
 
   return (
@@ -40,6 +42,12 @@ export default function SettingsWindow({
 
         <div className="p-4 h-[calc(100%-36px)]">
           {/* content later */}
+          <div className="flex ">
+            <SettingsSidebar sectionName="wallpaper" />
+            {
+              activeSettingsSection === "wallpaper" && <WallpaperChanger />
+            }
+          </div>
         </div>
       </div>
     </div>
