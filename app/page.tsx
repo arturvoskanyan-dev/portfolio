@@ -1,4 +1,4 @@
-import WallpaperChanger from "@/components/background/WallpaperChanger";
+import WallpaperChanger from "@/components/background/wallpaper/WallpaperChanger";
 import Dock from "@/components/dock";
 import Windows from "@/components/windows";
 

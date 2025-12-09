@@ -13,7 +13,7 @@ export default function SettingsSidebar({sectionName}: {sectionName: string}) {
 
     return (
         <div
-            className={`max-w-[300px] w-full`}
+            className={`max-w-[200px] w-full border-r-2 h-screen border-white`}
             style={{
                 // height: `${contentHeightSize}px`
             }}
