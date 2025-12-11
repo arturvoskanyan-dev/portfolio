@@ -16,7 +16,7 @@ export default function WallpaperPreview() {
     return (
         <div>
             <img
-                src={wallpaper || "/macos-wallpaper.webp"}
+                src={wallpaper || "/wallpapers/macos-wallpaper.webp"}
                 className='w-[350px] h-[200px] rounded-2xl'
                 alt='Wallpaper Image'
             />

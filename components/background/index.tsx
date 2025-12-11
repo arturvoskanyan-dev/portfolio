@@ -15,7 +15,7 @@ export default function Background() {
     return (
         <div
             style={{
-                backgroundImage: `url(${wallpaper || "/macos-wallpaper.webp"})`,
+                backgroundImage: `url(${wallpaper || "/wallpapers/macos-wallpaper.webp"})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
             }}

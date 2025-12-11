@@ -4,13 +4,20 @@ import Image from 'next/image'
 import React, { useCallback, useState } from 'react'
 import { IoFolderOutline } from 'react-icons/io5'
 import { wallpapers } from './wallpapers'
+import { setWallpaperFromUrl } from '@/lib/utils/wallpaper';
+import { useAppDispatch } from '@/lib/store/hooks';
 
 export default function WallpaperThumbnails() {
     const [isLess, setIsLess] = useState<boolean>(false);
     const wallpaperCount = isLess ? 1 : wallpapers.length;
+    const dispatch = useAppDispatch();
 
     const showButton = useCallback(() => {
         setIsLess((state) => !state)
+    }, [])
+
+    const wallpaperChange = useCallback((wallpaper: string) => {
+        setWallpaperFromUrl(wallpaper, dispatch)
     }, [])
 
     return (
@@ -35,6 +42,7 @@ export default function WallpaperThumbnails() {
                                 width={200}
                                 height={150}
                                 alt='Wallpaper Thumbnails'
+                                onClick={() => wallpaperChange(wallpaper.wallpaper)}
                             />
                         </>
                     ))

@@ -4,8 +4,8 @@ export type WallpapersType = {
 }
 
 export const wallpapers:Array<WallpapersType> = [
-    {id: 1, wallpaper: "/macos-wallpaper.webp"},
-    {id: 2, wallpaper: "/macos-wallpaper.webp"},
-    {id: 3, wallpaper: "/macos-wallpaper.webp"},
-    {id: 4, wallpaper: "/macos-wallpaper.webp"},
+    {id: 1, wallpaper: "/wallpapers/macos-wallpaper.webp"},
+    {id: 2, wallpaper: "/wallpapers/Mojave.webp"},
+    {id: 3, wallpaper: "/wallpapers/catiamatos.webp"},
+    {id: 4, wallpaper: "/wallpapers/macos-wallpaper.webp"},
 ]
