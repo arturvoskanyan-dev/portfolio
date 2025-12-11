@@ -10,6 +10,7 @@ import WindowHeader from "../WindowHeader";
 import SettingsSidebar from "./SettingsSidebar";
 import WallpaperChanger from "@/components/background/wallpaper/WallpaperChanger";
 import WallpaperPreview from "@/components/background/wallpaper/WallpaperPreview";
+import WallpaperThumbnails from "@/components/background/wallpaper/WallpaperThumbnails";
 
 export default function SettingsWindow({
   widthSize,
@@ -47,8 +48,9 @@ export default function SettingsWindow({
             <SettingsSidebar sectionName="wallpaper" />
             {
               activeSettingsSection === "wallpaper" &&
-              <div className="flex flex-col gap-12">
+              <div className="flex flex-col gap-12 ">
                 <WallpaperPreview />
+                <WallpaperThumbnails />
                 <WallpaperChanger />
               </div>
             }

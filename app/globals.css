@@ -34,3 +34,7 @@ html, body {
 .bg {
   height: 100vh;
 }
+
+button {
+  cursor: pointer;
+}
