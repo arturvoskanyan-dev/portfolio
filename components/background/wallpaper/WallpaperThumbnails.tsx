@@ -6,6 +6,7 @@ import { IoFolderOutline } from 'react-icons/io5'
 import { wallpapers } from './wallpapers'
 import { setWallpaperFromUrl } from '@/lib/utils/wallpaper';
 import { useAppDispatch } from '@/lib/store/hooks';
+import WallpaperChanger from './WallpaperChanger';
 
 export default function WallpaperThumbnails() {
     const [isLess, setIsLess] = useState<boolean>(false);
@@ -47,6 +48,14 @@ export default function WallpaperThumbnails() {
                         </>
                     ))
                 }
+            </div>
+            <div className='flex flex-col gap-2'>
+                <h3 className='text-[18px] text-white font-medium'>
+                    Your Photos
+                </h3>
+                <div>
+                    <WallpaperChanger />
+                </div>
             </div>
         </div>
     )

@@ -8,7 +8,6 @@ import {
 } from "@/lib/store/slices/windows/windowsSlice";
 import WindowHeader from "../WindowHeader";
 import SettingsSidebar from "./SettingsSidebar";
-import WallpaperChanger from "@/components/background/wallpaper/WallpaperChanger";
 import WallpaperPreview from "@/components/background/wallpaper/WallpaperPreview";
 import WallpaperThumbnails from "@/components/background/wallpaper/WallpaperThumbnails";
 
@@ -44,14 +43,13 @@ export default function SettingsWindow({
 
         <div className="p-4 h-[calc(100%-36px)]">
           {/* content later */}
-          <div className="flex gap-6">
+          <div className="flex gap-6 scroll-y">
             <SettingsSidebar sectionName="wallpaper" />
             {
               activeSettingsSection === "wallpaper" &&
-              <div className="flex flex-col gap-12 ">
+              <div className="flex flex-col gap-12">
                 <WallpaperPreview />
                 <WallpaperThumbnails />
-                <WallpaperChanger />
               </div>
             }
           </div>
