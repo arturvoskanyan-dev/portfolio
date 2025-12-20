@@ -57,7 +57,7 @@ const windowsSlice = createSlice({
         },
         resetWindowPosition(state, action: PayloadAction<keyof WindowsStateType>) {
             const windowName = action.payload;
-            state[windowName].position = { x: 0, y: 20 };
+            state[windowName].position = { x: 0, y: 30 };
         },
         setActiveSettingsSection(state, action: PayloadAction<{windowName: keyof WindowsStateType, activeSection: string}>) {
             const windowName = action.payload.windowName;
